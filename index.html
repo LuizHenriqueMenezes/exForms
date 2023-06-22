@@ -17,12 +17,12 @@
         </div>
 
         <div>
-            <form class="tipsForm">
+            <form class="tipsForm" id="tipsForm">
                 <label for="bill">
                     <p>Quanto ficou a conta?</p>
                 </label>
                 <p>
-                    R$ <input type="number" placeholder="100" name="bill" id="bill" class="formInput">
+                    R$ <input type="number" placeholder="100" name="bill" id="bill" class="formInput" required> <!-- requered: precisa ter algo pra poder submeter-->
                 </p>
 
                 <label for="serviceQuality">
@@ -30,7 +30,7 @@
                 </label>
                 <p>
                     <select name="serviceQuality" id="serviceQuality" class="formSelect">
-                        <option disable selected>Escolha uma opção</option>
+                        <option disable selected value="0">Escolha uma opção</option>
                         <option value="0.3">30% - Renato Augusto</option>
                         <option value="0.2">20% - Roger Guedes</option>
                         <option value="0.15">15% - Yuri Alberto</option>
@@ -43,15 +43,21 @@
                     <p>Quantas pessoas vão dividir a conta?</p>
                 </label>
                 <p>
-                    <input type="number" placeholder="1" name="people" id="people" class="formInput"> pessoa(s)
+                    <input type="number" placeholder="1" name="people" id="people" class="formInput" required> pessoa(s)
                 </p>
 
                 <button type="submit" class="formSubmit">Calcular</button>
             </form>
         </div>
 
+        <div id="totalTip">
+            Gorjeta total:
+            R$ <span id="tip">0.00</span>
+            <span id="each">cada</span>
+        </div>
+
     </div>
 
+    <script type="text/javascript" src="index.js"></script>
 </body>
-
 </html>
